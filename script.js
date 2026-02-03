@@ -145,13 +145,21 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 });
 
-// Parallax effect on hero section
+// Parallax effect on hero section with blur
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
+    const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
     
     if (hero) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Calculate blur based on scroll position (max 15px blur)
+        const blurAmount = Math.min(scrolled / heroHeight * 20, 15);
+        const opacityAmount = Math.max(1 - (scrolled / heroHeight * 1.2), 0);
+        const scaleAmount = 1 + (scrolled / heroHeight * 0.1);
+        
+        hero.style.filter = `blur(${blurAmount}px)`;
+        hero.style.opacity = opacityAmount;
+        hero.style.transform = `scale(${scaleAmount})`;
     }
 });
 
