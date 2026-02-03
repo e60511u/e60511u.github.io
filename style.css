@@ -241,8 +241,10 @@ section {
     line-height: 1.8;
     margin-bottom: 1rem;
     color: var(--gray-color);
-    background-color: white;
-    border-radius: 5%;
+    background-color: #000000;
+    border-radius: 12px;
+    padding: 1.5rem;
+    color: var(--white);
 }
 
 .about-stats {
