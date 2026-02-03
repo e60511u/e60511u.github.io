@@ -578,6 +578,226 @@ section {
     }
 }
 
+/* Formation Section */
+.formation-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.formation-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.formation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.formation-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.formation-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.formation-details {
+    color: var(--gray-color);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.formation-location {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.subsection-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2.5rem 0 1.5rem;
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* Langues */
+.langues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.langue-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.langue-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.langue-flag {
+    font-size: 2.5rem;
+}
+
+.langue-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.langue-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+.langue-level {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.langue-cert {
+    color: var(--gray-color);
+    font-size: 0.9rem;
+}
+
+/* Languages Container */
+.languages-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.language-tag {
+    position: relative;
+    background: var(--gradient);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.language-tag::after {
+    content: attr(data-years);
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--accent-color);
+    color: var(--white);
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.language-tag:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Skill Tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tags span {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(124, 58, 237, 0.1));
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+/* Experience Section */
+.experience-section {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.experience-timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.experience-icon {
+    font-size: 2.5rem;
+}
+
+.experience-content h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.experience-tasks {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-tasks li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--gray-color);
+}
+
+.experience-tasks li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Contact email link */
+.contact-item a {
+    color: var(--gray-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hamburger {
@@ -617,8 +837,21 @@ section {
         font-size: 2rem;
     }
 
-    .about-stats {
+    .formation-grid {
         grid-template-columns: 1fr;
+    }
+
+    .langues-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .languages-container {
+        gap: 0.75rem;
+    }
+
+    .language-tag {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
     }
 
     .projects-grid {
@@ -627,5 +860,10 @@ section {
 
     .contact-content {
         grid-template-columns: 1fr;
+    }
+
+    .experience-card {
+        flex-direction: column;
+        text-align: center;
     }
 }

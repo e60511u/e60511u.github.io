@@ -50,32 +50,37 @@
     <section id="formation" class="about">
         <div class="container">
             <h2 class="section-title">Formation</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="formation-item">
-                        <h3>🎓 BUT Informatique</h3>
-                        <p>Développement web, base de données, système, algorithmie, mathématiques</p>
-                        <p><em>IUT de Metz, Université de Lorraine</em></p>
-                    </div>
-                    <div class="formation-item">
-                        <h3>🎓 Baccalauréat Général</h3>
-                        <p>Spécialités NSI, Mathématiques et Physique-Chimie</p>
-                        <p>Mention Assez Bien, option Anglais Euro</p>
-                        <p><em>Lycée Hélène Boucher, Thionville</em></p>
+            <div class="formation-grid">
+                <div class="formation-card">
+                    <div class="formation-icon">🎓</div>
+                    <h3>BUT Informatique</h3>
+                    <p class="formation-details">Développement web, base de données, système, algorithmie, mathématiques</p>
+                    <p class="formation-location">IUT de Metz, Université de Lorraine</p>
+                </div>
+                <div class="formation-card">
+                    <div class="formation-icon">🎓</div>
+                    <h3>Baccalauréat Général</h3>
+                    <p class="formation-details">Spécialités NSI, Mathématiques et Physique-Chimie</p>
+                    <p class="formation-details">Mention Assez Bien, option Anglais Euro</p>
+                    <p class="formation-location">Lycée Hélène Boucher, Thionville</p>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Langues</h3>
+            <div class="langues-grid">
+                <div class="langue-card">
+                    <span class="langue-flag">🇬🇧</span>
+                    <div class="langue-info">
+                        <span class="langue-name">Anglais</span>
+                        <span class="langue-level">Niveau C1 (courant)</span>
+                        <span class="langue-cert">Cambridge English Certificate B2 (2024)</span>
                     </div>
                 </div>
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">🌐</span>
-                        <span class="stat-label">Anglais C1 (courant)</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">🇩🇪</span>
-                        <span class="stat-label">Allemand A2</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">📜</span>
-                        <span class="stat-label">Cambridge B2 (2024)</span>
+                <div class="langue-card">
+                    <span class="langue-flag">🇩🇪</span>
+                    <div class="langue-info">
+                        <span class="langue-name">Allemand</span>
+                        <span class="langue-level">Niveau A2 (débutant)</span>
                     </div>
                 </div>
             </div>
@@ -85,38 +90,50 @@
     <!-- Section Compétences -->
     <section id="competences" class="skills">
         <div class="container">
-            <h2 class="section-title">Compétences et Maîtrise</h2>
+            <h2 class="section-title">Compétences</h2>
+            
+            <h3 class="subsection-title">Langages de programmation</h3>
+            <div class="languages-container">
+                <div class="language-tag" data-years="2 ans">Python</div>
+                <div class="language-tag" data-years="2 ans">JavaScript</div>
+                <div class="language-tag" data-years="2 ans">SQL</div>
+                <div class="language-tag" data-years="2 ans">HTML/CSS</div>
+                <div class="language-tag" data-years="1 an">TypeScript</div>
+                <div class="language-tag" data-years="1 an">PHP</div>
+                <div class="language-tag" data-years="1 an">Bash</div>
+                <div class="language-tag" data-years="1 an">C</div>
+            </div>
+            
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">💻</div>
-                    <h3>Langages</h3>
-                    <p>Python (2 ans), TypeScript (1 an), JavaScript (2 ans), PHP (1 an), SQL (2 ans), Bash (1 an), HTML/CSS (2 ans), C (1 an)</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
-                    </div>
-                </div>
                 <div class="skill-card">
                     <div class="skill-icon">🛠️</div>
                     <h3>Outils</h3>
-                    <p>Git, Linux, Visual Studio Code, MySQL, Apache</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>Linux</span>
+                        <span>VS Code</span>
+                        <span>MySQL</span>
+                        <span>Apache</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🧠</div>
                     <h3>Capacités</h3>
-                    <p>Adaptation, autonomie, travail d'équipe</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
+                    <div class="skill-tags">
+                        <span>Adaptation</span>
+                        <span>Autonomie</span>
+                        <span>Travail d'équipe</span>
                     </div>
                 </div>
                 <div class="skill-card">
                     <div class="skill-icon">🎯</div>
                     <h3>Centres d'intérêt</h3>
-                    <p>Sport (fitness, musculation, escalade), Cinéma, Jeux vidéo</p>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
+                    <div class="skill-tags">
+                        <span>Fitness</span>
+                        <span>Musculation</span>
+                        <span>Escalade</span>
+                        <span>Cinéma</span>
+                        <span>Jeux vidéo</span>
                     </div>
                 </div>
             </div>
@@ -181,14 +198,18 @@
     </section>
 
     <!-- Section Expérience -->
-    <section id="experience" class="about">
+    <section id="experience" class="experience-section">
         <div class="container">
             <h2 class="section-title">Expérience</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <div class="formation-item">
-                        <h3>💼 Stage - Auto-école Polli</h3>
-                        <p>Relation client, gestion de documents administratifs</p>
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="experience-icon">💼</div>
+                    <div class="experience-content">
+                        <h3>Stage - Auto-école Polli</h3>
+                        <ul class="experience-tasks">
+                            <li>Relation client</li>
+                            <li>Gestion de documents administratifs</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -206,11 +227,7 @@
                     <div class="contact-details">
                         <div class="contact-item">
                             <span class="contact-icon">📧</span>
-                            <span>baptiste.tironi8@etu.univ-lorraine.fr</span>
-                        </div>
-                        <div class="contact-item">
-                            <span class="contact-icon">📱</span>
-                            <span>(+33) 6 06 44 16 53</span>
+                            <a href="mailto:baptiste.tironi8@etu.univ-lorraine.fr">baptiste.tironi8@etu.univ-lorraine.fr</a>
                         </div>
                     </div>
                     <div class="social-links">
