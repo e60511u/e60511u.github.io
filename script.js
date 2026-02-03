@@ -163,6 +163,12 @@ window.addEventListener('scroll', () => {
         hero.style.transform = `scale(${scaleAmount})`;
     }
     
+    // Apply blur to hero-wrapper content
+    if (heroWrapper) {
+        const blurAmount = Math.min(scrolled / heroHeight * 20, 15);
+        heroWrapper.style.filter = `blur(${blurAmount}px)`;
+    }
+    
     // Gradient overlay on hero-wrapper
     if (heroWrapper) {
         const overlayOpacity = Math.min(scrolled / (heroHeight * 0.6), 1);
