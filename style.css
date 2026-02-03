@@ -241,7 +241,7 @@ section {
     line-height: 1.8;
     margin-bottom: 1rem;
     color: var(--gray-color);
-    background-color: var(--white);
+    background-color: white;
     border-radius: 30%;
 }
 
