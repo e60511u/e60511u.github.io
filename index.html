@@ -33,19 +33,18 @@
 
     <!-- Section Accueil -->
     <div class="hero-wrapper">
-        <section id="accueil" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1 class="hero-title">Bonjour, je suis <span class="highlight">Baptiste TIRONI</span></h1>
-                    <p class="hero-subtitle">Étudiant BUT Informatique – Réalisation d'Applications</p>
-                    <p class="hero-description">Étudiant en 2ème année de Bachelor Universitaire Technologique en Informatique, je recherche un stage de 2 mois (Avril – Juin 2026) dans le domaine du développement, afin de mettre en pratique mes compétences et contribuer à des projets concrets.</p>
-                    <div class="hero-buttons">
-                        <a href="#projets" class="btn btn-primary">Voir mes projets</a>
-                        <a href="#contact" class="btn btn-secondary">Me contacter</a>
-                    </div>
+        <section id="accueil" class="hero"></section>
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Bonjour, je suis <span class="highlight">Baptiste TIRONI</span></h1>
+                <p class="hero-subtitle">Étudiant BUT Informatique – Réalisation d'Applications</p>
+                <p class="hero-description">Étudiant en 2ème année de Bachelor Universitaire Technologique en Informatique, je recherche un stage de 2 mois (Avril – Juin 2026) dans le domaine du développement, afin de mettre en pratique mes compétences et contribuer à des projets concrets.</p>
+                <div class="hero-buttons">
+                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-secondary">Me contacter</a>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <!-- Section Formation -->
@@ -95,38 +94,122 @@
             <h2 class="section-title">Compétences</h2>
             
             <h3 class="subsection-title">Langages de programmation</h3>
-            <div class="languages-container">
-                <div class="language-tag" data-years="2 ans">Python</div>
-                <div class="language-tag" data-years="2 ans">JavaScript</div>
-                <div class="language-tag" data-years="2 ans">SQL</div>
-                <div class="language-tag" data-years="2 ans">HTML/CSS</div>
-                <div class="language-tag" data-years="1 an">TypeScript</div>
-                <div class="language-tag" data-years="1 an">PHP</div>
-                <div class="language-tag" data-years="1 an">Bash</div>
-                <div class="language-tag" data-years="1 an">C</div>
+            <div class="competence-grid">
+                <div class="competence-item" data-years="2 ans">
+                    <div class="competence-header">
+                        <span class="competence-name">Python</span>
+                        <span class="competence-years">2 ans</span>
+                    </div>
+                    <p class="competence-desc">Automatisation, scripts, analyse de données et développement backend</p>
+                </div>
+                <div class="competence-item" data-years="2 ans">
+                    <div class="competence-header">
+                        <span class="competence-name">JavaScript</span>
+                        <span class="competence-years">2 ans</span>
+                    </div>
+                    <p class="competence-desc">Développement web interactif et applications frontend dynamiques</p>
+                </div>
+                <div class="competence-item" data-years="2 ans">
+                    <div class="competence-header">
+                        <span class="competence-name">SQL</span>
+                        <span class="competence-years">2 ans</span>
+                    </div>
+                    <p class="competence-desc">Conception et interrogation de bases de données relationnelles</p>
+                </div>
+                <div class="competence-item" data-years="2 ans">
+                    <div class="competence-header">
+                        <span class="competence-name">HTML/CSS</span>
+                        <span class="competence-years">2 ans</span>
+                    </div>
+                    <p class="competence-desc">Création de pages web responsive et stylisées</p>
+                </div>
+                <div class="competence-item" data-years="1 an">
+                    <div class="competence-header">
+                        <span class="competence-name">TypeScript</span>
+                        <span class="competence-years">1 an</span>
+                    </div>
+                    <p class="competence-desc">JavaScript typé pour des applications plus robustes</p>
+                </div>
+                <div class="competence-item" data-years="1 an">
+                    <div class="competence-header">
+                        <span class="competence-name">PHP</span>
+                        <span class="competence-years">1 an</span>
+                    </div>
+                    <p class="competence-desc">Développement backend et sites web dynamiques</p>
+                </div>
+                <div class="competence-item" data-years="1 an">
+                    <div class="competence-header">
+                        <span class="competence-name">Bash</span>
+                        <span class="competence-years">1 an</span>
+                    </div>
+                    <p class="competence-desc">Scripts shell et automatisation système Linux</p>
+                </div>
+                <div class="competence-item" data-years="1 an">
+                    <div class="competence-header">
+                        <span class="competence-name">C</span>
+                        <span class="competence-years">1 an</span>
+                    </div>
+                    <p class="competence-desc">Programmation bas niveau et compréhension de la mémoire</p>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Outils</h3>
+            <div class="competence-grid">
+                <div class="competence-item tool-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Git</span>
+                    </div>
+                    <p class="competence-desc">Gestion de versions et collaboration sur projets</p>
+                </div>
+                <div class="competence-item tool-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Linux</span>
+                    </div>
+                    <p class="competence-desc">Administration système et environnement de développement</p>
+                </div>
+                <div class="competence-item tool-item">
+                    <div class="competence-header">
+                        <span class="competence-name">VS Code</span>
+                    </div>
+                    <p class="competence-desc">Éditeur de code principal avec extensions personnalisées</p>
+                </div>
+                <div class="competence-item tool-item">
+                    <div class="competence-header">
+                        <span class="competence-name">MySQL</span>
+                    </div>
+                    <p class="competence-desc">Système de gestion de bases de données relationnelles</p>
+                </div>
+                <div class="competence-item tool-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Apache</span>
+                    </div>
+                    <p class="competence-desc">Configuration et déploiement de serveurs web</p>
+                </div>
+            </div>
+            
+            <h3 class="subsection-title">Capacités</h3>
+            <div class="competence-grid">
+                <div class="competence-item capacity-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Adaptation</span>
+                    </div>
+                    <p class="competence-desc">Capacité à m'ajuster rapidement à de nouveaux environnements et technologies</p>
+                </div>
+                <div class="competence-item capacity-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Autonomie</span>
+                    </div>
+                    <p class="competence-desc">Aptitude à travailler de manière indépendante et à prendre des initiatives</p>
+                </div>
+                <div class="competence-item capacity-item">
+                    <div class="competence-header">
+                        <span class="competence-name">Travail d'équipe</span>
+                    </div>
+                    <p class="competence-desc">Collaboration efficace avec les membres d'une équipe sur des projets communs</p>
+                </div>
             </div>
             
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon">🛠️</div>
-                    <h3>Outils</h3>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>Linux</span>
-                        <span>VS Code</span>
-                        <span>MySQL</span>
-                        <span>Apache</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon">🧠</div>
-                    <h3>Capacités</h3>
-                    <div class="skill-tags">
-                        <span>Adaptation</span>
-                        <span>Autonomie</span>
-                        <span>Travail d'équipe</span>
-                    </div>
-                </div>
                 <div class="skill-card">
                     <div class="skill-icon">🎯</div>
                     <h3>Centres d'intérêt</h3>
@@ -148,7 +231,7 @@
             <h2 class="section-title">Projets Académiques</h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" style="background-image: url('applicationsweb.png');">
                         <div class="project-overlay">
                             <a href="https://github.com/e60511u" class="project-link">Voir sur GitHub</a>
                         </div>
@@ -164,7 +247,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" style="background-image: url('algorithmesetjeux.png');">
                         <div class="project-overlay">
                             <a href="https://github.com/e60511u" class="project-link">Voir sur GitHub</a>
                         </div>
@@ -180,7 +263,7 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-image">
+                    <div class="project-image" style="background-image: url('gestiondeprojetetreseau.png');">
                         <div class="project-overlay">
                             <a href="https://github.com/e60511u" class="project-link">Voir sur GitHub</a>
                         </div>

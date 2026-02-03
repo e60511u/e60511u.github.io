@@ -149,6 +149,7 @@ contactForm.addEventListener('submit', (e) => {
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
+    const heroWrapper = document.querySelector('.hero-wrapper');
     const heroHeight = hero ? hero.offsetHeight : window.innerHeight;
     
     if (hero) {
@@ -160,6 +161,12 @@ window.addEventListener('scroll', () => {
         hero.style.filter = `blur(${blurAmount}px)`;
         hero.style.opacity = opacityAmount;
         hero.style.transform = `scale(${scaleAmount})`;
+    }
+    
+    // Gradient overlay on hero-wrapper
+    if (heroWrapper) {
+        const overlayOpacity = Math.min(scrolled / (heroHeight * 0.6), 1);
+        heroWrapper.style.setProperty('--overlay-opacity', overlayOpacity);
     }
 });
 
