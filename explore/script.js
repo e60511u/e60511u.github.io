@@ -293,6 +293,21 @@ const rocketEmoji = document.getElementById('rocket-emoji');
 const btnVoyager = document.getElementById('btn-voyager');
 let isRocketTravelling = false;
 
+// Fonction pour convertir le nom de la planète en nom de dossier
+function planetNameToFolder(planetName) {
+    const mapping = {
+        'Mercure': 'mercure',
+        'Vénus': 'venus',
+        'Terre': 'terre',
+        'Mars': 'mars',
+        'Jupiter': 'jupiter',
+        'Saturne': 'saturne',
+        'Uranus': 'uranus',
+        'Neptune': 'neptune'
+    };
+    return mapping[planetName] || planetName.toLowerCase();
+}
+
 btnVoyager.addEventListener('click', (e) => {
     e.stopPropagation();
     if (isRocketTravelling || !selectedPlanet) return;
@@ -336,28 +351,12 @@ btnVoyager.addEventListener('click', (e) => {
     rocketEmoji.style.transform = `rotate(${angle}deg)`;
     rocketEmoji.style.opacity = '0';
     
-    // Après la fin de l'animation, réinitialiser la fusée
+    // Après la fin de l'animation, rediriger vers la planète
     setTimeout(() => {
-        rocketEmoji.classList.remove('travelling');
-        rocketEmoji.classList.add('resetting');
-        
-        // Remettre la position initiale sans animation
-        rocketEmoji.style.left = '20px';
-        rocketEmoji.style.top = '20px';
-        rocketEmoji.style.fontSize = '60px';
-        rocketEmoji.style.transform = '';
-        rocketEmoji.style.opacity = '';
-        
-        // Forcer le reflow avant de réactiver l'animation
-        void rocketEmoji.offsetWidth;
-        
-        // Faire réapparaître la fusée avec l'animation de flottement
-        rocketEmoji.classList.remove('resetting', 'arrived');
-        
-        // Désélectionner la planète
-        selectedPlanet = null;
-        isRocketTravelling = false;
-    }, 1800);
+        // Rediriger vers le dossier de la planète
+        const planetFolder = planetNameToFolder(selectedPlanet);
+        window.location.href = `../${planetFolder}/`;
+    }, 1500);
 });
 
 // Fonction pour assombrir une couleur
