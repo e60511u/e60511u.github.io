@@ -202,6 +202,17 @@ function drawPlanet(planet) {
         ctx.stroke();
     }
     
+    // Cercle de sélection autour de la planète
+    if (selectedPlanet === planet.name) {
+        const circleSize = Math.round(scaledRadius * 3.5);
+        ctx.fillStyle = 'rgba(255, 0, 0, 0.7)';
+        ctx.font = `${circleSize}px "Segoe UI Symbol", "Arial Unicode MS", sans-serif`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('◯', x, y + circleSize * 0.05);
+        ctx.textBaseline = 'alphabetic';
+    }
+    
     // Nom de la planète
     let fontSize = Math.max(18, Math.round(24 * scaleFactor));
     let fontStyle = '';
