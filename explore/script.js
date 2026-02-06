@@ -277,6 +277,78 @@ btnDeselect.addEventListener('click', (e) => {
     updatePlanetActions();
 });
 
+// Animation du bouton Voyager
+const rocketEmoji = document.getElementById('rocket-emoji');
+const btnVoyager = document.getElementById('btn-voyager');
+let isRocketTravelling = false;
+
+btnVoyager.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isRocketTravelling || !selectedPlanet) return;
+    
+    isRocketTravelling = true;
+    
+    // Trouver la planète sélectionnée
+    const targetPlanet = planets.find(p => p.name === selectedPlanet);
+    if (!targetPlanet) return;
+    
+    // Position actuelle de la planète
+    const targetX = targetPlanet.x;
+    const targetY = targetPlanet.y;
+    
+    // Position initiale de la fusée (centre de l'élément)
+    const rocketRect = rocketEmoji.getBoundingClientRect();
+    const startX = rocketRect.left + rocketRect.width / 2;
+    const startY = rocketRect.top + rocketRect.height / 2;
+    
+    // Calculer l'angle vers la planète
+    const dx = targetX - startX;
+    const dy = targetY - startY;
+    const angle = Math.atan2(dy, dx) * (180 / Math.PI) + 90; // +90 car la fusée pointe vers le haut
+    
+    // Cacher les boutons
+    planetActionsDiv.classList.remove('slide-in');
+    void planetActionsDiv.offsetWidth;
+    planetActionsDiv.classList.add('burst-out');
+    
+    // Lancer l'animation de la fusée
+    rocketEmoji.classList.remove('resetting', 'arrived');
+    rocketEmoji.classList.add('travelling');
+    
+    // Forcer le reflow
+    void rocketEmoji.offsetWidth;
+    
+    // Appliquer la destination (centrer la fusée sur la planète)
+    rocketEmoji.style.left = (targetX - 15) + 'px';
+    rocketEmoji.style.top = (targetY - 15) + 'px';
+    rocketEmoji.style.fontSize = '15px';
+    rocketEmoji.style.transform = `rotate(${angle}deg)`;
+    rocketEmoji.style.opacity = '0';
+    
+    // Après la fin de l'animation, réinitialiser la fusée
+    setTimeout(() => {
+        rocketEmoji.classList.remove('travelling');
+        rocketEmoji.classList.add('resetting');
+        
+        // Remettre la position initiale sans animation
+        rocketEmoji.style.left = '20px';
+        rocketEmoji.style.top = '20px';
+        rocketEmoji.style.fontSize = '60px';
+        rocketEmoji.style.transform = '';
+        rocketEmoji.style.opacity = '';
+        
+        // Forcer le reflow avant de réactiver l'animation
+        void rocketEmoji.offsetWidth;
+        
+        // Faire réapparaître la fusée avec l'animation de flottement
+        rocketEmoji.classList.remove('resetting', 'arrived');
+        
+        // Désélectionner la planète
+        selectedPlanet = null;
+        isRocketTravelling = false;
+    }, 1800);
+});
+
 // Fonction pour assombrir une couleur
 function shadeColor(color, percent) {
     const num = parseInt(color.replace('#', ''), 16);

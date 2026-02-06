@@ -34,6 +34,28 @@ body {
     pointer-events: none;
     animation: float 3s ease-in-out infinite;
     transform-origin: center;
+    padding-top: 10px;
+    transition: none;
+}
+
+#rocket-emoji.travelling {
+    animation: none;
+    transition: top 1.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                left 1.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                font-size 1.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                transform 1.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                opacity 0.3s ease 1.2s;
+}
+
+#rocket-emoji.arrived {
+    animation: none;
+    opacity: 0;
+}
+
+#rocket-emoji.resetting {
+    animation: none;
+    transition: none;
+    opacity: 0;
 }
 
 #planet-actions {
