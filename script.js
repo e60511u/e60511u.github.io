@@ -90,13 +90,6 @@ const observer = new IntersectionObserver((entries) => {
         if (entry.isIntersecting) {
             entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
             
-            // Animate skill bars
-            if (entry.target.classList.contains('skill-card')) {
-                const progressBar = entry.target.querySelector('.skill-progress');
-                const progress = progressBar.getAttribute('data-progress');
-                progressBar.style.width = progress + '%';
-            }
-            
             // Animate counters
             if (entry.target.classList.contains('about-stats')) {
                 animateCounters();
@@ -108,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements
-document.querySelectorAll('.skill-card, .project-card, .about-stats').forEach(el => {
+document.querySelectorAll('.project-card, .about-stats').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
 });
@@ -127,22 +120,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    const formData = new FormData(contactForm);
-    
-    // Show success message
-    alert('Merci pour votre message ! Je vous répondrai bientôt.');
-    
-    // Reset form
-    contactForm.reset();
 });
 
 // Parallax effect on hero section with blur
@@ -241,6 +218,29 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach(el => {
     el.style.opacity = '0';
     revealObserver.observe(el);
+});
+
+// Scroll progress indicator
+const scrollProgress = document.getElementById('scrollProgress');
+
+const updateScrollProgress = () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercentage = (scrollTop / scrollHeight) * 100;
+    scrollProgress.style.width = scrollPercentage + '%';
+};
+
+window.addEventListener('scroll', updateScrollProgress);
+
+// Floating Explorer button — show after scrolling
+const exploreBtn = document.getElementById('exploreBtn');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 200) {
+        exploreBtn.classList.add('visible');
+    } else {
+        exploreBtn.classList.remove('visible');
+    }
 });
 
 console.log('Portfolio loaded successfully! 🚀');
