@@ -56,22 +56,6 @@ function resizeCanvas() {
     scaleFactor = available / maxOrbit;
     // Régénérer les étoiles pour le nouveau viewport
     regenerateStars();
-    // Ajuster la taille de l'émoji fusée en fonction de l'écran
-    const zoomCompensation = 1 / (window.devicePixelRatio || 1);
-    const isMobile = window.innerWidth <= 768;
-    let rocketSize;
-    if (isMobile) {
-        // Sur mobile: taille proportionnelle à l'écran (plus grande)
-        const screenSize = Math.min(canvas.width, canvas.height);
-        rocketSize = (screenSize / 8) * zoomCompensation;
-    } else {
-        // Sur PC: taille fixe
-        rocketSize = 60 * zoomCompensation;
-    }
-    const rocketEmoji = document.getElementById('rocket-emoji');
-    if (rocketEmoji) {
-        rocketEmoji.style.fontSize = rocketSize + 'px';
-    }
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
