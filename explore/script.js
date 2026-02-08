@@ -11,14 +11,46 @@ function regenerateStars() {
             x: Math.random() * canvas.width,
             y: Math.random() * canvas.height,
             radius: Math.random() * 1.5,
-            opacity: Math.random()
+            opacity: Math.random(),
+            baseOpacity: Math.random(),
+            dx: (Math.random() - 0.5) * 0.3,
+            dy: (Math.random() - 0.5) * 0.3,
+            twinkleSpeed: Math.random() * 0.02 + 0.01
         });
     }
+}
+
+// Mettre à jour les positions des étoiles
+function updateStars() {
+    stars.forEach(star => {
+        // Déplacement
+        star.x += star.dx;
+        star.y += star.dy;
+        
+        // Wrap around (réapparition de l'autre côté)
+        if (star.x < 0) star.x = canvas.width;
+        if (star.x > canvas.width) star.x = 0;
+        if (star.y < 0) star.y = canvas.height;
+        if (star.y > canvas.height) star.y = 0;
+        
+        // Scintillement
+        star.opacity = star.baseOpacity + Math.sin(time * star.twinkleSpeed) * 0.3;
+        star.opacity = Math.max(0.1, Math.min(1, star.opacity));
+    });
 }
 
 // Définir la taille du canvas en plein écran
 let scaleFactor = 1;
 let centerX, centerY;
+
+// Fonction pour compenser le zoom du navigateur sur l'émoji fusée
+function adjustRocketSize() {
+    const zoomCompensation = 1 / (window.devicePixelRatio || 1);
+    const rocketEmoji = document.getElementById('rocket-emoji');
+    if (rocketEmoji) {
+        rocketEmoji.style.fontSize = (60 * zoomCompensation) + 'px';
+    }
+}
 
 function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -33,6 +65,8 @@ function resizeCanvas() {
     scaleFactor = available / maxOrbit;
     // Régénérer les étoiles pour le nouveau viewport
     regenerateStars();
+    // Ajuster la taille de l'émoji fusée
+    adjustRocketSize();
 }
 resizeCanvas();
 window.addEventListener('resize', resizeCanvas);
@@ -376,10 +410,11 @@ function shadeColor(color, percent) {
 
 // Dessiner des étoiles en arrière-plan
 function drawStars() {
+    const zoomCompensation = window.devicePixelRatio || 1;
     stars.forEach(star => {
         ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.arc(star.x, star.y, star.radius / zoomCompensation, 0, Math.PI * 2);
         ctx.fill();
     });
 }
@@ -389,13 +424,16 @@ function animate() {
     // Effacer le canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
-    // Dessiner les éléments
+    // Mettre à jour et dessiner les étoiles animées
+    updateStars();
     drawStars();
+    
     drawOrbits();
     drawSun();
     
     // Mettre à jour et dessiner les planètes
     if (!isPaused) {
+        time += 1;
         planets.forEach(planet => {
             planet.angle += (planet.speed * 0.001 * animationSpeed);
         });

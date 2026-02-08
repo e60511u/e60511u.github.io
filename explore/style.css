@@ -8,11 +8,15 @@
 
 body {
     background: radial-gradient(ellipse at center, #0f0f1e 0%, #000000 100%);
-    width: 100dvw;
-    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
     padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
+    overflow: hidden;
 }
+
 
 #solarSystem {
     display: block;
