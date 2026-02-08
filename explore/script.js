@@ -28,7 +28,7 @@ function resizeCanvas() {
     // Calculer le facteur d'échelle pour que tout tienne dans l'écran
     // L'orbite max est 400px, on veut qu'elle tienne avec une marge
     const maxOrbit = 400;
-    const margin = 20; // marge réduite pour plus de zoom
+    const margin = 10; // marge très réduite pour plus de zoom
     const available = Math.min(canvas.width, canvas.height) / 2 - margin;
     scaleFactor = available / maxOrbit;
     // Régénérer les étoiles pour le nouveau viewport
